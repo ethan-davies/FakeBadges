@@ -36,6 +36,9 @@ const badgeData = {
     "Moderator Programmes Alumni": {
         image: "https://cdn.discordapp.com/badge-icons/fee1624003e2fee35cb398e125dc479b.png",
     },
+    "Partnered Server Owner": {
+        image: "https://cdn.discordapp.com/badge-icons/3f9748e53446a137a052f3454e2de41e.png",
+    },
     "Early Supporter": {
         image: "https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png",
     },
@@ -68,6 +71,7 @@ const badgeSettings = {
     discordStaffBadge: "Discord Staff",
     hypeSquadEventsBadge: "HypeSquad Events",
     moderatorProgrammesAlumniBadge: "Moderator Programmes Alumni",
+    partneredServerOwnerBadge: "Partnered Server Owner",
     earlySupporterBadge: "Early Supporter",
     earlyVerifiedBotDeveloperBadge: "Early Verified Bot Developer",
     discordBugHunterGoldBadge: "Discord Bug Hunter Gold",
