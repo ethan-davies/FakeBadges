@@ -1,7 +1,12 @@
-import definePlugin, { OptionType } from "@utils/types";
+/*
+ * Vencord, a Discord client mod
+ * Copyright (c) 2024 Vendicated and contributors
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
+import { addBadge, BadgePosition, ProfileBadge, removeBadge } from "@api/Badges";
 import { definePluginSettings } from "@api/Settings";
-import { BadgePosition, ProfileBadge } from "@api/Badges";
-import { addBadge, removeBadge } from "@api/Badges";
+import definePlugin, { OptionType } from "@utils/types";
 import { UserStore } from "@webpack/common";
 
 const getUserId = () => {
@@ -29,6 +34,9 @@ const BadgeTier = {
 const badgeData = {
     "Discord Staff": {
         image: "https://cdn.discordapp.com/badge-icons/5e74e9b61934fc1f67c65515d1f7e60d.png",
+    },
+    "Active Developer": {
+        image: "https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png",
     },
     "HypeSquad Events": {
         image: "https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png",
@@ -77,6 +85,7 @@ const badgeSettings = {
     discordBugHunterGoldBadge: "Discord Bug Hunter Gold",
     discordBugHunterGreenBadge: "Discord Bug Hunter Green",
     nitroMemberBadge: "Nitro Member",
+    activeDeveloperBadge: "Active Developer",
     boostingBadge: "Choose a boosting badge tier (0-9)",
 };
 
@@ -109,7 +118,7 @@ export default definePlugin({
 
 const addEnabledBadges = () => {
     Object.entries(badgeData).forEach(([badgeName, badgeInfo]) => {
-        const sanitizedBadgeName = badgeName.replace(/\s+/g, '');
+        const sanitizedBadgeName = badgeName.replace(/\s+/g, "");
         const settingName = `${sanitizedBadgeName.charAt(0).toLowerCase()}${sanitizedBadgeName.slice(1)}Badge`;
         const isEnabled = settings.store[settingName] === true;
 
